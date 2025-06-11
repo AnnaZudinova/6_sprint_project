@@ -28,23 +28,19 @@ public class CatTests {
     }
 
     @Test
-    public void getFoodReturnsPredatorFood(){
+    public void getFoodReturnsPredatorFood() throws Exception{
         Feline feline=new Feline();
         Cat cat=new Cat(feline);
-        List<String> expectedCatFood=List.of("Животные", "Птицы", "Рыба");
+        List<String> expectedCatFood= List.of("Животные", "Птицы", "Рыба");
 
-        try{assertEquals(expectedCatFood, cat.getFood());}
-        catch (Exception e) {
-            System.out.println(e);}
+        assertEquals(expectedCatFood, cat.getFood());
     }
 
     @Test
-    public void getFoodInvokesFelineEatMeat() {
+    public void getFoodInvokesFelineEatMeat() throws Exception {
         Cat cat=new Cat(feline);
 
-        try{cat.getFood();
-            Mockito.verify(feline).eatMeat();}
-        catch (Exception e){
-            System.out.println(e);}
+       cat.getFood();
+       Mockito.verify(feline).eatMeat();
     }
 }

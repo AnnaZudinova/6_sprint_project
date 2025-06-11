@@ -17,17 +17,16 @@ public class FelineTests {
     Feline feline;
 
     @Test
-    public void eatMeatReturnsPredatorFood() {
+    public void eatMeatReturnsPredatorFood() throws Exception {
+        Feline feline=new Feline();
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
 
-        try {assertEquals(expectedFood, feline.eatMeat());}
-        catch (Exception e) {
-            System.out.print("Поймали exception:"+e);}
+        assertEquals(expectedFood, feline.eatMeat());
     }
 
-
-  @Test
-  public void getFamilyReturnsFeline(){
+    @Test
+    public void getFamilyReturnsFeline(){
+      Feline feline=new Feline();
      String expectedFamily="Кошачьи";
      assertEquals(expectedFamily,feline.getFamily());
   }
